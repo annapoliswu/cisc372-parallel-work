@@ -1,0 +1,66 @@
+               HW4: Parallelization of Heat Equation Simulator
+
+Released: Tuesday, Apr. 7
+Due: Friday, Apr. 17, 10:00 PM
+
+Create a directory "hw4" in your personal repository.
+Commit it and all your solution files.
+Do NOT commit any generated files (*.o, *.exe, a.out) or backup files
+(*~) or any other unnecessary files.
+
+1. heat
+
+Create a subdirectoy "heat" in your hw4 folder.
+All files relating to this problem should be placed in the heat folder.
+
+Study the sequential program heat.c. This program simulates the
+diffusion of heat through a metal rod. The rod starts at 100 degrees
+C. everywhere except the two endpoints. The endpoints are kept at a
+constant temperature of 0 deg. C, which cools the rod as time
+progresses.
+
+The program uses the GD library to generate an animated GIF which
+shows the changes in heat at each point, using color to indicate
+temperature (blue=0, red=100).
+
+The animated GIF is translated to MP4 video using the FFMPEG utility.
+The MP4 can be played with most video players.
+
+Your goal is to develop a parallel, MPI-based version of this program
+(named heat_mpi.c) that will perform well. You will want to use a
+standard block distribution of the arrays u and u_new, and ghost cells.
+
+The DEBUG option is useful for debugging very small configurations. It
+will print output to the screen and to files. These can be examined to
+see exactly what is going on at each point, at each time step.
+
+The parallel version of the program has to be careful about the I/O.
+Only one process (typically, process 0) should perform I/O. Each time
+a frame is written, all other processes will send their data to
+process 0, so process 0 can write the appropriate images to the frame.
+
+Test your parallel program carefully by choosing different parameter
+values and comparing with the sequential. A couple of configurations
+are provided for you in the given Makefile, but you should make up
+some more.
+
+Add timing calls to your parallel program so that the total time the 
+program took to run is printed at the end, in seconds, to 2 decimal places.
+
+Time (s): XXX.XX
+
+Run your program on the course VM using SLURM with CONFIG3, which generates 
+no file output, at the following processor counts 
+(you can execute 'make timings' to do this):
+
+1,2,3,4,5,6,7,8,16,24
+
+Create a graph, any way you like, in which the x-axis is the number of
+processes and the y-axis is the time. Include this with your solution
+as a single pdf file entitled heat-times.pdf.
+
+Commit:
+	heat.c
+	heat_mpi.c
+	Makefile
+	heat-times.pdf

@@ -1,0 +1,42 @@
+	HW5: Pthreads
+
+Released: Thu, Apr. 30
+Due: Friday, May 8, 10:00 PM
+
+As usual, create a directory 'hw5' in your personal repository.
+Commit it and all of your solution files.
+Do NOT commit any generated/binary files (*.o, *.exe, a.out) 
+or backup files (*~) or any other unnecessary files.
+
+1. pin
+
+Create a subdirectory 'pin' in your hw5 folder.
+All files relating to this problem should be placed in the pin folder.
+
+Remember the pin problem from hw3?  Create a Pthreads version of this
+program.  Call it pin_pt.c.  Your program should take in the following arguments:
+X: The number to calculate the pin on
+NUM_THREADS: The number of threads to run your program with (must be >0)
+
+Test it carefully by comparing against
+the sequential or mpi version. Use cisc372.cis.udel.edu and SLURM to
+run your program: srun -c NUM_THREADS ./pin_pt X NUM_THREADS.
+
+Example: srun -c 40 ./pin_pt 100000000 40
+
+What is the fastest execution time you can
+achieve for input 100000000? How does it compare to the (best) MPI
+version?  Answer these questions in a simple comment in the first 2
+lines of the file, in the following form:
+
+// The PIN is 2345 (Pthreads: nthreads = 40, time = 45.7 sec.) 
+// The PIN is 2345 (MPI: nprocs = 40, time = 90.3 sec.)
+
+Edit the provided Makefile so that executing 'make pin_pt' will
+compile your Pthreads program and generate the executable 'pin_pt',
+and executing 'make pt_medium' will run your program on the input
+10000000 with 40 threads.
+
+Commit:
+	pin_pt.c
+	Makefile

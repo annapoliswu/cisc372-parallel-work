@@ -1,0 +1,23 @@
+Average time to transmit between 0 and 1: 0.0000012518
+Average time to transmit between 0 and 2: 0.0000016593
+Average time to transmit between 0 and 3: 0.0000015355
+Average time to transmit between 0 and 4: 0.0000017014
+Average time to transmit between 0 and 5: 0.0000016840
+Average time to transmit between 0 and 6: 0.0000013855
+Average time to transmit between 0 and 7: 0.0000016552
+Average time to transmit between 0 and 8: 0.0000016887
+Average time to transmit between 0 and 9: 0.0000016708
+Average time to transmit between 0 and 10: 0.0000017568
+Average time to transmit between 0 and 11: 0.0000017687
+Average time to transmit between 0 and 12: 0.0000017260
+Average time to transmit between 0 and 13: 0.0000017421
+Average time to transmit between 0 and 14: 0.0000017987
+Average time to transmit between 0 and 15: 0.0000017768
+Average time to transmit between 0 and 16: 0.0000018328
+Average time to transmit between 0 and 17: 0.0000018496
+Average time to transmit between 0 and 18: 0.0000017011
+Average time to transmit between 0 and 19: 0.0000018054
+
+All the average transmit times are really small fractions of a second.
+Also after running a couple of times, it seems like the times between
+get longer as processes get higher / further from 0. 
